@@ -1,0 +1,65 @@
+{
+  "name": "fe-setup-template",
+  "version": "1.0.0",
+  "description": "A sample project setup template for front-end which provides githooks and prettyfy the code",
+  "main": "",
+  "jsnext:main": "",
+  "module": "",
+  "browser": "",
+  "author": "Shashank Shrivastava",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "lint": "eslint src",
+    "test": "jest",
+    "test:watch": "jest src --watch --notify",
+    "cover": "jest --coverage",
+    "clean": "rimraf dist",
+    "precommit": "lint-staged",
+    "format": "prettier --write \"src/**/*.+(js|md|ts|css|sass|less|graphql|yml|yaml|scss|json|vue)\"",
+    "prepublishOnly": "yarn clean && yarn lint && yarn test && yarn build"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
+    "chalk": "^2.0.1",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^22.1.2",
+    "husky": "^1.3.1",
+    "jest": "^23.6.0",
+    "lint-staged": "^8.1.0",
+    "prettier": "^1.15.3",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.0.1",
+    "rollup-plugin-babel": "^4.2.0"
+  },
+  "keywords": [
+    "FESetupTemplate",
+    "javascript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shashmca/fesetuptemplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shashmca/fesetuptemplate/issues"
+  },
+  "homepage": "https://github.com/shashmca/fesetuptemplate#readme",
+  "dependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn precommit"
+    }
+  }
+}
